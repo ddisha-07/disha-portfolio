@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Health Predictor | Disha Projects</title>
+    <!-- Custom favicon -->
+    <link class="favicon" rel="icon" href="./logo.jpg" type="image/jpeg">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@700;800&display=swap"
+        rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Main Style -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Specific project view overrides */
+        .project-header-section {
+            padding: 140px 32px 60px 32px;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .project-meta-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            margin: 40px 0;
+            padding: 24px 0;
+            border-top: 1px solid var(--border-glass);
+            border-bottom: 1px solid var(--border-glass);
+        }
+
+        .meta-item {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .meta-label {
+            font-family: var(--font-subheading);
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .meta-value {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .project-hero-showcase {
+            width: 100%;
+            height: 480px;
+            border-radius: var(--border-radius-lg);
+            border: 1px solid var(--border-glass);
+            background: linear-gradient(135deg, #0a332a 0%, #0d594b 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 30px 60px -20px rgba(2, 6, 15, 0.8);
+            margin-bottom: 60px;
+        }
+
+        .project-hero-icon {
+            font-size: 8rem;
+            color: #ffffff;
+            opacity: 0.85;
+            transition: transform 0.5s ease;
+            z-index: 1;
+        }
+
+        .project-hero-showcase:hover .project-hero-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .project-body-grid {
+            display: grid;
+            grid-template-columns: 1.8fr 1fr;
+            gap: 60px;
+            max-width: 1200px;
+            margin: 0 auto 100px auto;
+            padding: 0 32px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .project-body-left h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+        }
+
+        .project-body-left p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+        }
+
+        .tech-list-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .tech-pill {
+            padding: 8px 16px;
+            border-radius: 30px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border-glass);
+            font-family: var(--font-subheading);
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--accent-secondary);
+        }
+
+        .project-sidebar-card {
+            background: var(--bg-glass);
+            border: 1px solid var(--border-glass);
+            border-radius: var(--border-radius-lg);
+            padding: 32px;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            position: sticky;
+            top: 110px;
+        }
+
+        .sidebar-title {
+            font-family: var(--font-heading);
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+        }
+
+        .sidebar-list {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .sidebar-list-item {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            line-height: 1.4;
+        }
+
+        .sidebar-list-item i {
+            color: var(--accent-secondary);
+            font-size: 1rem;
+            width: 20px;
+            text-align: center;
+        }
+
+        .sidebar-links {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-top: 30px;
+        }
+
+        .sidebar-btn {
+            width: 100%;
+            justify-content: center;
+        }
+
+        .project-navigator-bar {
+            border-top: 1px solid var(--border-glass);
+            padding: 60px 32px;
+            background: rgba(2, 6, 15, 0.4);
+            position: relative;
+            z-index: 2;
+        }
+
+        .navigator-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-project-link {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .nav-project-dir {
+            font-family: var(--font-subheading);
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+        }
+
+        .nav-project-title {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            transition: var(--transition-fast);
+        }
+
+        .nav-project-link:hover .nav-project-title {
+            color: var(--accent-secondary);
+            transform: translateX(4px);
+        }
+
+        .nav-project-link.prev-link:hover .nav-project-title {
+            transform: translateX(-4px);
+        }
+
+        @media (max-width: 900px) {
+            .project-body-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .project-meta-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+
+            .project-hero-showcase {
+                height: 300px;
+            }
+
+            .project-hero-icon {
+                font-size: 5rem;
+            }
+        }
+    </style>
+</head>
+
+<body class="dark-mode">
+    <!-- Custom Additive Light Cursor (Orange/Cyan Ring + Dot) -->
+    <div class="custom-cursor" id="custom-cursor"></div>
+    <div class="custom-cursor-dot" id="custom-cursor-dot"></div>
+
+    <!-- Tactile Grain Overlay -->
+    <div class="grain-overlay"></div>
+
+    <!-- Background Glows -->
+    <div class="bg-glow-container">
+        <div class="glow-blob blob-1"></div>
+        <div class="glow-blob blob-2"></div>
+        <div class="interactive-glow" id="cursor-glow"></div>
+    </div>
+
+    <!-- Glassmorphic Header Menu -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo" aria-label="Disha Home Logo">
+                <div class="logo-img-frame">
+                    <img src="./logo.jpg" alt="Disha Logo">
+                </div>
+                <span>D DISHA SHREE</span>
+                <!-- Zoomed-in preview popup on hover/touch -->
+                <div class="logo-zoom-preview">
+                    <img src="./logo.jpg" alt="Disha Logo Zoomed">
+                    <div class="zoom-preview-glow"></div>
+                </div>
+            </a>
+            <nav class="nav-links">
+                <a href="index.html#projects" class="nav-magnetic-item active">Back to Playbook</a>
+            </nav>
+            <div class="nav-actions">
+                <a href="./Profile.pdf" target="_blank" class="cta-btn-sm">Resume</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Project Viewport -->
+    <main>
+        <article class="project-header-section">
+            <span class="section-tag animate-fade-in">ML PROJECT 03</span>
+            <h1 class="hero-welcome-title animate-title" style="margin-top: 10px;">Mental Health Predictor</h1>
+
+            <div class="project-meta-grid animate-fade-in-delay">
+                <div class="meta-item">
+                    <span class="meta-label">Project Type</span>
+                    <span class="meta-value">Research & ML Case Study</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Role</span>
+                    <span class="meta-value">ML Researcher & Backend Developer</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Key Features</span>
+                    <span class="meta-value">Mental Health Data Analysis, Predictive Modeling & Research Insights</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Built With</span>
+                    <span class="meta-value">Python • Pandas • Scikit-learn</span>
+                </div>
+            </div>
+
+            <!-- Big visual showcase card -->
+            <div class="project-hero-showcase animate-fade-in-delay">
+                <div class="bento-card-glow" style="opacity: 0.1; width: 600px; height: 600px; top: 50%; left: 50%;">
+                </div>
+                <i class="fas fa-atom project-hero-icon"></i>
+                <div class="golden-hour-shimmer"></div>
+            </div>
+        </article>
+
+        <!-- Project Deep Dive Body -->
+        <section class="project-body-grid">
+            <div class="project-body-left">
+                <h3>The Challenge</h3>
+                <p>
+                    Mental health issues among students and young adults often go unnoticed due to the lack of
+                    accessible and data-driven support systems. Understanding behavioral patterns and emotional
+                    indicators through data can help create more effective mental wellness solutions.
+                </p>
+                <p>
+                    The challenge was to analyze large mental health datasets, identify meaningful insights, and build a
+                    backend predictive model that could support future mental health applications and research systems.
+                </p>
+
+                <h3 style="margin-top: 50px;">Architectural Highlights</h3>
+                <p>
+                    The project focused on building a machine learning pipeline for mental health data analysis,
+                    including data preprocessing, feature selection, predictive modeling, and insight generation. The
+                    backend workflow was designed to efficiently process dataset-driven inputs and support future
+                    integration into real-world mental health applications.
+                </p>
+
+                <h3 style="margin-top: 50px;">Technology Stack</h3>
+                <div class="tech-list-row">
+                    <span class="tech-pill">Python</span>
+                    <span class="tech-pill">Pandas</span>
+                    <span class="tech-pill">Scikit-learn</span>
+                    <span class="tech-pill">Data Visualization</span>
+                    <span class="tech-pill">Machine Learning</span>
+                    <span class="tech-pill">Kaggle Dataset</span>
+                    <span class="tech-pill">Jupyter Notebook</span>
+                </div>
+            </div>
+
+            <div class="project-body-right">
+                <div class="project-sidebar-card">
+                    <h4 class="sidebar-title">Project Deliverables</h4>
+                    <ul class="sidebar-list">
+                        <li class="sidebar-list-item">
+                            <i class="fas fa-database"></i>
+                            <span>Dataset Analysis</span>
+                        </li>
+                        <li class="sidebar-list-item">
+                            <i class="fas fa-filter"></i>
+                            <span>Data Cleaning & Preprocessing</span>
+                        </li>
+                        <li class="sidebar-list-item">
+                            <i class="fas fa-brain"></i>
+                            <span>Backend ML Model Development</span>
+                        </li>
+                        <li class="sidebar-list-item">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Predictive Analysis</span>
+                        </li>
+                        <li class="sidebar-list-item">
+                            <i class="fas fa-file-alt"></i>
+                            <span>Research Documentation</span>
+                        </li>
+                        <li class="sidebar-list-item">
+                            <i class="fas fa-chart-bar"></i>
+                            <span>Data Visualization & Insights</span>
+                        </li>
+                    </ul>
+                    <div class="sidebar-links">
+                        <a href="index.html#projects" class="sidebar-btn primary-btn">
+                            <span>Back to Playbook</span>
+                            <i class="fas fa-arrow-left"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bottom Page Navigator -->
+        <nav class="project-navigator-bar">
+            <div class="navigator-container">
+                <a href="music.html" class="nav-project-link prev-link">
+                    <span class="nav-project-dir"><i class="fas fa-chevron-left"></i> Previous Project</span>
+                    <span class="nav-project-title">DewyGlow</span>
+                </a>
+                <a href="ecommerce.html" class="nav-project-link next-link">
+                    <span class="nav-project-dir">Next Project <i class="fas fa-chevron-right"></i></span>
+                    <span class="nav-project-title">Spendly</span>
+                </a>
+            </div>
+        </nav>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <p class="copyright">&copy; 2026 Disha. All rights reserved. Handcrafted case studies.</p>
+        </div>
+    </footer>
+
+    <!-- App Logic for Cursors and themes -->
+    <script type="module">
+        // Basic cursor and theme driver for showcase page
+        document.addEventListener('DOMContentLoaded', () => {
+            const cursorRing = document.getElementById('custom-cursor');
+            const cursorDot = document.getElementById('custom-cursor-dot');
+            const cursorGlow = document.getElementById('cursor-glow');
+            const body = document.body;
+
+            // Load theme
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            if (savedTheme === 'light') {
+                body.classList.remove('dark-mode');
+                body.classList.add('light-mode');
+            } else {
+                body.classList.remove('light-mode');
+                body.classList.add('dark-mode');
+            }
+
+            let mouseX = window.innerWidth / 2;
+            let mouseY = window.innerHeight / 2;
+            let glowX = mouseX;
+            let glowY = mouseY;
+            let ringX = mouseX;
+            let ringY = mouseY;
+            let dotX = mouseX;
+            let dotY = mouseY;
+            let isMoving = false;
+
+            window.addEventListener('mousemove', (e) => {
+                mouseX = e.clientX;
+                mouseY = e.clientY;
+                isMoving = true;
+
+                cursorRing.style.opacity = '1';
+                cursorDot.style.opacity = '1';
+                cursorGlow.style.opacity = '1';
+            });
+
+            document.addEventListener('mouseleave', () => {
+                cursorRing.style.opacity = '0';
+                cursorDot.style.opacity = '0';
+                cursorGlow.style.opacity = '0';
+                isMoving = false;
+            });
+
+            function anim() {
+                if (isMoving) {
+                    glowX += (mouseX - glowX) * 0.06;
+                    glowY += (mouseY - glowY) * 0.06;
+                    cursorGlow.style.left = `${glowX}px`;
+                    cursorGlow.style.top = `${glowY}px`;
+
+                    ringX += (mouseX - ringX) * 0.15;
+                    ringY += (mouseY - ringY) * 0.15;
+                    cursorRing.style.left = `${ringX}px`;
+                    cursorRing.style.top = `${ringY}px`;
+
+                    dotX += (mouseX - dotX) * 0.45;
+                    dotY += (mouseY - dotY) * 0.45;
+                    cursorDot.style.left = `${dotX}px`;
+                    cursorDot.style.top = `${dotY}px`;
+                }
+                requestAnimationFrame(anim);
+            }
+            anim();
+
+            // Hover state magnet triggers
+            const interactive = document.querySelectorAll('a, button, .tech-pill');
+            interactive.forEach(el => {
+                el.addEventListener('mouseenter', () => {
+                    cursorRing.classList.add('hover-state');
+                    cursorDot.style.opacity = '0';
+                });
+                el.addEventListener('mouseleave', () => {
+                    cursorRing.classList.remove('hover-state');
+                    cursorDot.style.opacity = '1';
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
