@@ -1708,7 +1708,7 @@ body.light-mode .skill-tile:hover {
     width: 10px; /* Default State: Elegant small circle */
     height: 10px;
     background-color: transparent;
-    border: 1.5px solid var(--accent-secondary); /* Cyan border */
+    border: 3px solid var(--accent-secondary); /* Bolder Cyan border */
     border-radius: 50%;
     position: fixed;
     transform: translate(-50%, -50%);
@@ -1736,7 +1736,7 @@ body.light-mode .skill-tile:hover {
     width: 30px;
     height: 30px;
     background-color: rgba(0, 255, 224, 0.05); /* Very subtle cyan glow tint */
-    border: 1.5px solid var(--accent-secondary); /* Cyan */
+    border: 3px solid var(--accent-secondary); /* Bolder Cyan */
     box-shadow: 0 0 12px rgba(0, 255, 224, 0.3);
 }
 
