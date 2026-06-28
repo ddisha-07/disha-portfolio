@@ -671,35 +671,4 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-
-    // -------------------------------------------------------------
-    // 13. Dynamic Chatoyant Catseye Lighting & Pupil Slit Morph
-    // -------------------------------------------------------------
-    const heroElements = document.querySelectorAll('#hero h1, #hero h2, #hero p, #hero a, #hero .hero-snapshot-container');
-    const customCursor = document.getElementById('custom-cursor');
-
-    heroElements.forEach(el => {
-        // Apply catseye target class dynamically
-        el.classList.add('catseye-target');
-
-        el.addEventListener('mousemove', (e) => {
-            const rect = el.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            el.style.setProperty('--catseye-pos-x', `${x}px`);
-            el.style.setProperty('--catseye-pos-y', `${y}px`);
-            
-            // Morph custom cursor to vertical slit pupil shape
-            if (customCursor) {
-                customCursor.classList.add('catseye-hover');
-            }
-        });
-
-        el.addEventListener('mouseleave', () => {
-            // Revert cursor to standard glowing halo ring shape
-            if (customCursor) {
-                customCursor.classList.remove('catseye-hover');
-            }
-        });
-    });
 });

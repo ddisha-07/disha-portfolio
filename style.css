@@ -1705,22 +1705,21 @@ body.light-mode .skill-tile:hover {
    ADDITIVE LIGHT CUSTOM CURSOR SYSTEM (THE "DESIRE AGENCY" SCHEME)
    ========================================================================== */
 .custom-cursor {
-    width: 6px; /* Default State: Refined subtle small dot */
-    height: 6px;
-    background-color: var(--accent-secondary); /* Cyan default */
-    border: 2px solid transparent;
+    width: 10px; /* Default State: Elegant small circle */
+    height: 10px;
+    background-color: transparent;
+    border: 1.5px solid var(--accent-secondary); /* Cyan border */
     border-radius: 50%;
     position: fixed;
     transform: translate(-50%, -50%);
     pointer-events: none;
     z-index: 10000;
-    transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
-                height 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
-                background-color 0.4s ease, 
-                border-color 0.4s ease, 
-                box-shadow 0.4s ease,
-                border-radius 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    will-change: left, top, width, height, border-radius;
+    transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+                height 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+                background-color 0.3s ease, 
+                border-color 0.3s ease, 
+                box-shadow 0.3s ease;
+    will-change: left, top, width, height;
     opacity: 0;
     display: flex;
     justify-content: center;
@@ -1729,28 +1728,16 @@ body.light-mode .skill-tile:hover {
 }
 
 .custom-cursor-dot {
-    width: 3px;
-    height: 3px;
-    background-color: var(--accent-secondary);
-    border-radius: 50%;
-    position: fixed;
-    transform: translate(-50%, -50%);
-    pointer-events: none;
-    z-index: 10001;
-    will-change: left, top;
-    opacity: 0;
-    transition: opacity 0.3s ease;
+    display: none; /* Hide the center dot entirely */
 }
 
-/* Additive Light Glowing Ring hover state */
+/* Hover state: remains just a clean, slightly larger small circle */
 .custom-cursor.hover-state {
-    width: 44px; /* Scaled down for a sleeker, more refined hover outline */
-    height: 44px;
-    background-color: rgba(255, 255, 255, 0.03);
-    border: 2px solid var(--accent-secondary); /* Cyan */
-    box-shadow: 0 0 15px rgba(0, 255, 224, 0.4), inset 0 0 8px rgba(255, 168, 0, 0.2);
-    backdrop-filter: blur(3.5px) saturate(120%);
-    -webkit-backdrop-filter: blur(3.5px) saturate(120%);
+    width: 30px;
+    height: 30px;
+    background-color: rgba(0, 255, 224, 0.05); /* Very subtle cyan glow tint */
+    border: 1.5px solid var(--accent-secondary); /* Cyan */
+    box-shadow: 0 0 12px rgba(0, 255, 224, 0.3);
 }
 
 @media (pointer: fine) {
@@ -1869,69 +1856,4 @@ body.light-mode .skill-tile:hover {
     }
 }
 
-/* ==========================================================================
-   DYNAMIC CHATOYANT CATSEYE REFLECTION SYSTEM
-   ========================================================================== */
-.catseye-target {
-    position: relative;
-    outline: none !important;
-    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
-    transform-origin: center center;
-    will-change: transform;
-}
 
-.catseye-target:hover {
-    transform: scale(1.035) !important; /* Zooms element 3.5% for magnifying focus */
-    z-index: 10;
-}
-
-/* Ensure buttons float up AND scale up perfectly together on hover */
-.primary-btn.catseye-target:hover {
-    transform: translateY(-2px) scale(1.035) !important;
-}
-
-.secondary-btn.catseye-target:hover {
-    transform: translateY(-2px) scale(1.035) !important;
-}
-
-.catseye-target::after {
-    content: '';
-    position: absolute;
-    width: 140px;
-    height: 140px;
-    border-radius: 50%;
-    left: var(--catseye-pos-x, 50%);
-    top: var(--catseye-pos-y, 50%);
-    background: radial-gradient(
-        circle,
-        rgba(255, 255, 255, 0.15) 0%,
-        rgba(255, 168, 0, 0.3) 40%,
-        rgba(0, 255, 224, 0.25) 75%,
-        transparent 100%
-    );
-    pointer-events: none;
-    z-index: 5;
-    mix-blend-mode: screen;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    transform: translate(-50%, -50%); /* Centered on coordinates */
-    will-change: left, top;
-}
-
-.catseye-target:hover::after {
-    opacity: 0.75 !important; /* 75% Chatoyant Glare Opacity */
-}
-
-/* Circular Cat's Eye Magnifying Glass Cursor Morph */
-.custom-cursor.catseye-hover {
-    width: 64px !important;
-    height: 64px !important;
-    background-color: var(--cursor-lens-bg) !important; /* Masks with a very clean, high-transparency frosted tint */
-    border: 2px solid var(--accent) !important; /* Golden catseye ring outer */
-    border-radius: 50% !important; /* perfect circular lens */
-    box-shadow: 0 0 25px rgba(255, 168, 0, 0.5), inset 0 0 15px rgba(0, 255, 224, 0.35) !important;
-    backdrop-filter: blur(2.5px) saturate(145%) !important; /* Premium soft magnifying blur */
-    -webkit-backdrop-filter: blur(2.5px) saturate(145%) !important;
-    mix-blend-mode: normal !important; /* Ensures backdrop blur renders perfectly */
-    transform: translate(-50%, -50%) !important; /* Center alignment */
-}
