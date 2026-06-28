@@ -1705,8 +1705,8 @@ body.light-mode .skill-tile:hover {
    ADDITIVE LIGHT CUSTOM CURSOR SYSTEM (THE "DESIRE AGENCY" SCHEME)
    ========================================================================== */
 .custom-cursor {
-    width: 8px; /* Default State: Subtle small dot */
-    height: 8px;
+    width: 6px; /* Default State: Refined subtle small dot */
+    height: 6px;
     background-color: var(--accent-secondary); /* Cyan default */
     border: 2px solid transparent;
     border-radius: 50%;
@@ -1729,8 +1729,8 @@ body.light-mode .skill-tile:hover {
 }
 
 .custom-cursor-dot {
-    width: 4px;
-    height: 4px;
+    width: 3px;
+    height: 3px;
     background-color: var(--accent-secondary);
     border-radius: 50%;
     position: fixed;
@@ -1744,11 +1744,11 @@ body.light-mode .skill-tile:hover {
 
 /* Additive Light Glowing Ring hover state */
 .custom-cursor.hover-state {
-    width: 60px;
-    height: 60px;
+    width: 44px; /* Scaled down for a sleeker, more refined hover outline */
+    height: 44px;
     background-color: rgba(255, 255, 255, 0.03);
     border: 2px solid var(--accent-secondary); /* Cyan */
-    box-shadow: 0 0 20px rgba(0, 255, 224, 0.5), inset 0 0 12px rgba(255, 168, 0, 0.3);
+    box-shadow: 0 0 15px rgba(0, 255, 224, 0.4), inset 0 0 8px rgba(255, 168, 0, 0.2);
     backdrop-filter: blur(3.5px) saturate(120%);
     -webkit-backdrop-filter: blur(3.5px) saturate(120%);
 }
@@ -1924,8 +1924,8 @@ body.light-mode .skill-tile:hover {
 
 /* Circular Cat's Eye Magnifying Glass Cursor Morph */
 .custom-cursor.catseye-hover {
-    width: 82px !important;
-    height: 82px !important;
+    width: 64px !important;
+    height: 64px !important;
     background-color: var(--cursor-lens-bg) !important; /* Masks with a very clean, high-transparency frosted tint */
     border: 2px solid var(--accent) !important; /* Golden catseye ring outer */
     border-radius: 50% !important; /* perfect circular lens */
