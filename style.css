@@ -75,27 +75,6 @@ body.light-mode {
   --social-border: rgba(255, 85, 0, 0.1);
   --social-bg: rgba(255, 85, 0, 0.02);
   --social-desc: #5a3a22;
-
-  /* Additional Light Mode Configurations */
-  --font-size: 16px;
-  --background: #ffffff;
-  --foreground: oklch(0.145 0 0);
-  --card: #ffffff;
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: #030213;
-  --primary-foreground: oklch(1 0 0);
-  --secondary: oklch(0.95 0.0058 264.53);
-  --secondary-foreground: #030213;
-  --muted: #ececf0;
-  --muted-foreground: #717182;
-  --accent: #e9ebef;
-  --accent-foreground: #030213;
-  --border: rgba(0, 0, 0, 0.1);
-  --input: transparent;
-  --input-background: #f3f3f5;
-  --switch-background: #cbced4;
 }
 
 /* Reset & Global Elements */
@@ -1217,4 +1196,37 @@ body.light-mode .modal-card {
 }
 .modal-visit-btn:hover {
   background: var(--brand-hover);
+}
+
+/* Hero Footer Statistics Grid */
+.hero-footer-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem 3rem;
+  border-top: 1px solid var(--border-color);
+  padding-top: 1.5rem;
+  margin-top: 2rem;
+  z-index: 10;
+  position: relative;
+}
+
+.hero-footer-stat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.hero-footer-stat-num {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 0.72rem;
+  color: var(--brand-color);
+  letter-spacing: 0.05em;
+}
+
+.hero-footer-stat-label {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 0.8rem;
+  color: var(--text-muted);
 }
