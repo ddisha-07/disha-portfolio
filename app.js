@@ -129,10 +129,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const savedTheme = localStorage.getItem('disha_theme') || 'dark';
   if (savedTheme === 'light') {
     document.body.classList.add('light-mode');
-    if (themeIcon) themeIcon.className = 'fas fa-sun';
+    if (themeIcon) themeIcon.className = 'fas fa-moon';
   } else {
     document.body.classList.remove('light-mode');
-    if (themeIcon) themeIcon.className = 'fas fa-moon';
+    if (themeIcon) themeIcon.className = 'fas fa-sun';
   }
 
   if (themeToggle) {
@@ -140,10 +140,10 @@ document.addEventListener('DOMContentLoaded', () => {
       const isLight = document.body.classList.toggle('light-mode');
       if (isLight) {
         localStorage.setItem('disha_theme', 'light');
-        if (themeIcon) themeIcon.className = 'fas fa-sun';
+        if (themeIcon) themeIcon.className = 'fas fa-moon';
       } else {
         localStorage.setItem('disha_theme', 'dark');
-        if (themeIcon) themeIcon.className = 'fas fa-moon';
+        if (themeIcon) themeIcon.className = 'fas fa-sun';
       }
     });
   }
