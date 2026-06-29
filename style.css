@@ -20,6 +20,7 @@
   --hero-img-blend: multiply;
   --hero-img-filter: contrast(1.18) brightness(0.88) saturate(0.85);
   --hero-overlay-rgb: 6, 1, 0;
+  --fade-color-rgb: 0, 0, 0; /* Pure black fade for dark mode page transitions */
   --hero-subtitle-color: rgba(255, 230, 210, 0.82);
   --hero-heading-color: #ffffff;
   --hero-cta-bg: #ffffff;
@@ -58,6 +59,7 @@ body.light-mode {
   --hero-img-blend: multiply;
   --hero-img-filter: contrast(1.1) brightness(1.0) saturate(0.95);
   --hero-overlay-rgb: 253, 246, 240;
+  --fade-color-rgb: 255, 255, 255; /* Pure white fade for light mode page transitions */
   --hero-subtitle-color: #5a3a22; /* Figma: Deep brown */
   --hero-heading-color: #1a0800; /* Figma: Near-black */
   --hero-cta-bg: #1a0800; /* Figma: Dark bg */
@@ -300,7 +302,7 @@ section {
   bottom: 0;
   height: 18rem;
   pointer-events: none;
-  background: linear-gradient(to top, rgba(var(--hero-overlay-rgb), 1) 0%, rgba(var(--hero-overlay-rgb), 0.6) 45%, rgba(var(--hero-overlay-rgb), 0) 100%);
+  background: linear-gradient(to top, rgba(var(--fade-color-rgb), 1) 0%, rgba(var(--fade-color-rgb), 0.6) 45%, rgba(var(--fade-color-rgb), 0) 100%);
 }
 
 .hero-content {
