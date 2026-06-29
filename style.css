@@ -12,26 +12,19 @@
   --bg-card: rgba(255, 85, 0, 0.04);
   --border-color: rgba(255, 85, 0, 0.12);
   --text-color: #f5ede8;
-  --text-muted: rgba(245, 237, 232, 0.75);
-  --text-muted-more: rgba(245, 237, 232, 0.5);
+  --text-muted: rgba(245, 237, 232, 0.5);
   --text-ultra-muted: rgba(245, 237, 232, 0.25);
   
-  --text-stats: rgba(245, 237, 232, 0.4);
-  --text-bio: rgba(245, 237, 232, 0.65);
+  /* Figma Component Theme variables - Dark Mode */
+  --marquee-border: rgba(255, 85, 0, 0.4);
+  --marquee-bg: rgba(255, 85, 0, 0.06);
+  --list-border: rgba(255, 255, 255, 0.06);
+  --list-bg: rgba(255, 255, 255, 0.02);
   --interest-border: rgba(255, 255, 255, 0.1);
-  --interest-text: rgba(245, 237, 232, 0.6);
-  --cursive-tag-color: rgba(245, 237, 232, 0.4);
-  
-  --switcher-border: rgba(255, 85, 0, 0.2);
-  --switcher-bg: rgba(255, 85, 0, 0.05);
-  --toggle-inactive-color: rgba(245, 237, 232, 0.45);
-  --social-desc-color: rgba(245, 237, 232, 0.27);
-  --footer-border: rgba(255, 85, 0, 0.1);
-  --footer-credits-color: rgba(245, 237, 232, 0.25);
-  --marquee-border-color: rgba(255, 85, 0, 0.12);
-  --marquee-tag-border: rgba(255, 85, 0, 0.4);
-  --marquee-tag-bg: rgba(255, 85, 0, 0.06);
-  --text-marquee-label: rgba(255, 255, 255, 0.2);
+  --interest-color: rgba(245, 237, 232, 0.6);
+  --social-border: rgba(255, 85, 0, 0.12);
+  --social-bg: rgba(255, 85, 0, 0.04);
+  --social-desc: rgba(245, 237, 232, 0.27);
   
   --font-display: 'Archivo Black', sans-serif;
   --font-cursive: 'Caveat', cursive;
@@ -45,26 +38,19 @@ body.light-mode {
   --bg-card: rgba(255, 85, 0, 0.02);
   --border-color: rgba(255, 85, 0, 0.1);
   --text-color: #0d0500;
-  --text-muted: rgba(13, 5, 0, 0.65);
-  --text-muted-more: rgba(13, 5, 0, 0.45);
+  --text-muted: rgba(13, 5, 0, 0.5);
   --text-ultra-muted: rgba(13, 5, 0, 0.3);
   
-  --text-stats: rgba(13, 5, 0, 0.4);
-  --text-bio: rgba(13, 5, 0, 0.65);
+  /* Figma Component Theme variables - Light Mode */
+  --marquee-border: rgba(255, 85, 0, 0.35);
+  --marquee-bg: rgba(255, 85, 0, 0.04);
+  --list-border: rgba(0, 0, 0, 0.06);
+  --list-bg: rgba(255, 85, 0, 0.02);
   --interest-border: rgba(13, 5, 0, 0.1);
-  --interest-text: rgba(13, 5, 0, 0.6);
-  --cursive-tag-color: rgba(13, 5, 0, 0.4);
-  
-  --switcher-border: rgba(255, 85, 0, 0.15);
-  --switcher-bg: rgba(255, 85, 0, 0.03);
-  --toggle-inactive-color: rgba(13, 5, 0, 0.45);
-  --social-desc-color: rgba(13, 5, 0, 0.3);
-  --footer-border: rgba(255, 85, 0, 0.08);
-  --footer-credits-color: rgba(13, 5, 0, 0.3);
-  --marquee-border-color: rgba(255, 85, 0, 0.1);
-  --marquee-tag-border: rgba(255, 85, 0, 0.35);
-  --marquee-tag-bg: rgba(255, 85, 0, 0.04);
-  --text-marquee-label: rgba(13, 5, 0, 0.25);
+  --interest-color: rgba(13, 5, 0, 0.6);
+  --social-border: rgba(255, 85, 0, 0.1);
+  --social-bg: rgba(255, 85, 0, 0.02);
+  --social-desc: rgba(13, 5, 0, 0.3);
 }
 
 /* Reset & Global Elements */
@@ -200,7 +186,7 @@ body.light-mode .navbar.scrolled {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--text-muted-more);
+  color: var(--text-muted);
   transition: all 0.2s ease;
 }
 .theme-toggle-btn:hover {
@@ -452,7 +438,7 @@ section {
   font-family: var(--font-sans);
   font-size: 0.75rem;
   font-weight: 700;
-  color: var(--text-stats);
+  color: var(--text-muted);
   margin-top: 0.25rem;
 }
 
@@ -465,7 +451,7 @@ section {
 .about-paragraph {
   font-size: 1rem;
   line-height: 1.6;
-  color: var(--text-bio);
+  color: var(--text-muted);
 }
 .about-paragraph em {
   font-family: var(--font-cursive);
@@ -500,7 +486,7 @@ section {
   font-size: 0.8rem;
   font-weight: 700;
   border: 1px solid var(--interest-border);
-  color: var(--interest-text);
+  color: var(--interest-color);
   transition: all 0.2s ease;
   user-select: none;
 }
@@ -520,7 +506,7 @@ section {
 .about-action-tag {
   font-family: var(--font-cursive);
   font-size: 1rem;
-  color: var(--cursive-tag-color);
+  color: var(--text-ultra-muted);
 }
 
 .resume-download-btn {
@@ -544,7 +530,7 @@ section {
 .marquees-container {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 0.5rem;
   margin-top: 5rem;
   width: 100vw;
   position: relative;
@@ -552,27 +538,11 @@ section {
   right: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
-  border-top: 1px solid var(--marquee-border-color);
-  border-bottom: 1px solid var(--marquee-border-color);
-  padding: 2.25rem 0;
-}
-
-.marquee-label {
-  font-family: var(--font-sans);
-  font-size: 0.72rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--text-marquee-label);
-  padding: 0 1.25rem;
-}
-@media (min-width: 640px) {
-  .marquee-label { padding: 0 2.5rem; }
 }
 
 .marquee-row {
   overflow: hidden;
-  padding: 0.2rem 0;
+  padding: 0.4rem 0;
   width: 100%;
 }
 
@@ -593,9 +563,9 @@ section {
   border-radius: 9999px;
   font-size: 0.8rem;
   font-weight: 700;
-  border: 1px solid var(--marquee-tag-border);
+  border: 1px solid var(--marquee-border);
   color: var(--brand-color);
-  background: var(--marquee-tag-bg);
+  background: var(--marquee-bg);
   white-space: nowrap;
 }
 
@@ -650,8 +620,8 @@ section {
 .projects-view-toggle {
   display: flex;
   align-items: center;
-  background: var(--switcher-bg);
-  border: 1px solid var(--switcher-border);
+  background: rgba(255, 85, 0, 0.05);
+  border: 1px solid var(--border-color);
   border-radius: 9999px;
   padding: 0.25rem;
   width: fit-content;
@@ -665,7 +635,7 @@ section {
   border-radius: 9999px;
   font-size: 0.8rem;
   font-weight: 700;
-  color: var(--toggle-inactive-color);
+  color: var(--text-muted);
   transition: all 0.2s ease;
 }
 .toggle-btn.active {
@@ -822,8 +792,8 @@ section {
   gap: 1.25rem;
   padding: 1rem;
   border-radius: 1rem;
-  border: 1px solid var(--border-color);
-  background: var(--bg-card);
+  border: 1px solid var(--list-border);
+  background: var(--list-bg);
   cursor: pointer;
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -977,8 +947,8 @@ body.light-mode .list-tag {
   align-items: flex-start;
   padding: 1.5rem;
   border-radius: 1.25rem;
-  border: 1px solid var(--border-color);
-  background: var(--bg-card);
+  border: 1px solid var(--social-border);
+  background: var(--social-bg);
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .social-card:hover {
@@ -1018,7 +988,7 @@ body.light-mode .list-tag {
 
 .social-desc-txt {
   font-size: 0.75rem;
-  color: var(--social-desc-color);
+  color: var(--social-desc);
 }
 
 .social-visit-link {
@@ -1039,7 +1009,7 @@ body.light-mode .list-tag {
 /* Footer */
 .footer {
   padding: 2.5rem 1.25rem;
-  border-top: 1px solid var(--footer-border);
+  border-top: 1px solid var(--border-color);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1061,7 +1031,7 @@ body.light-mode .list-tag {
 
 .footer-credit {
   font-size: 0.75rem;
-  color: var(--footer-credits-color);
+  color: var(--text-ultra-muted);
   text-align: center;
 }
 
