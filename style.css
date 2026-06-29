@@ -243,10 +243,10 @@ section {
 
 /* Home Section */
 .hero-wrapper {
-  padding: 5rem 0.75rem 1.5rem 0.75rem;
+  padding: 1rem 0.75rem 1.5rem 0.75rem;
 }
 @media (min-width: 640px) {
-  .hero-wrapper { padding: 5rem 1.25rem 1.5rem 1.25rem; }
+  .hero-wrapper { padding: 1.25rem 1.25rem 1.5rem 1.25rem; }
 }
 
 .hero-card {
@@ -290,9 +290,9 @@ section {
   position: absolute;
   inset-x: 0;
   top: 0;
-  height: 18rem;
+  height: 14rem;
   pointer-events: none;
-  background: linear-gradient(to bottom, rgba(var(--hero-overlay-rgb), 1) 0%, rgba(var(--hero-overlay-rgb), 0.5) 50%, rgba(var(--hero-overlay-rgb), 0) 100%);
+  background: linear-gradient(to bottom, rgba(var(--hero-overlay-rgb), 0.35) 0%, rgba(var(--hero-overlay-rgb), 0.12) 50%, rgba(var(--hero-overlay-rgb), 0) 100%);
 }
 .hero-gradient-overlay-bottom {
   position: absolute;
