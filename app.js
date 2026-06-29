@@ -671,4 +671,44 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // -------------------------------------------------------------
+    // 13. Mobile Menu Dropdown Interactivity
+    // -------------------------------------------------------------
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileNavLinks = document.querySelector('.nav-links');
+    
+    if (mobileMenuBtn && mobileNavLinks) {
+        mobileMenuBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            mobileNavLinks.classList.toggle('active');
+            const icon = mobileMenuBtn.querySelector('i');
+            if (icon) {
+                if (mobileNavLinks.classList.contains('active')) {
+                    icon.className = 'fas fa-xmark';
+                } else {
+                    icon.className = 'fas fa-bars';
+                }
+            }
+        });
+
+        // Close menu when clicking a link
+        const navItems = mobileNavLinks.querySelectorAll('a');
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                mobileNavLinks.classList.remove('active');
+                const icon = mobileMenuBtn.querySelector('i');
+                if (icon) icon.className = 'fas fa-bars';
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!mobileNavLinks.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+                mobileNavLinks.classList.remove('active');
+                const icon = mobileMenuBtn.querySelector('i');
+                if (icon) icon.className = 'fas fa-bars';
+            }
+        });
+    }
 });

@@ -285,6 +285,20 @@ body.light-mode .interactive-glow {
     transform: scale(1.05);
 }
 
+.mobile-menu-btn {
+    display: none;
+    background: transparent;
+    border: none;
+    color: var(--text-primary);
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 8px;
+    margin-left: 8px;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition-fast);
+}
+
 /* Custom Zoom Preview Popover next to Website Name */
 .logo-zoom-preview {
     position: absolute;
@@ -1836,12 +1850,78 @@ body.light-mode .skill-tile:hover {
         grid-template-columns: 1fr;
         gap: 48px;
     }
+    .projects-horizontal-row {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on tablet */
+        gap: 24px;
+    }
+    /* Hide custom cursor on tablets and touchscreen devices */
+    .custom-cursor, .custom-cursor-dot {
+        display: none !important;
+    }
+    body.custom-cursor-enabled,
+    body.custom-cursor-enabled a,
+    body.custom-cursor-enabled button,
+    body.custom-cursor-enabled .filter-btn,
+    body.custom-cursor-enabled .skill-tag,
+    body.custom-cursor-enabled .social-btn,
+    body.custom-cursor-enabled .theme-btn,
+    body.custom-cursor-enabled .submit-btn,
+    body.custom-cursor-enabled .project-link,
+    body.custom-cursor-enabled .hero-scroll-indicator a,
+    body.custom-cursor-enabled .timeline-dot,
+    body.custom-cursor-enabled input,
+    body.custom-cursor-enabled textarea,
+    body.custom-cursor-enabled .tool-wrapper,
+    body.custom-cursor-enabled .hero-snapshot-container {
+        cursor: auto !important; /* Restore normal cursor */
+    }
 }
 
 @media (max-width: 768px) {
+    /* Mobile slide-down menu navigation */
+    .mobile-menu-btn {
+        display: inline-flex;
+    }
     .nav-links {
         display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--bg-glass);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-bottom: 1px solid var(--border-glass);
+        flex-direction: column;
+        padding: 24px 0;
+        gap: 16px;
+        align-items: center;
+        z-index: 99;
+        transition: all 0.3s ease;
     }
+    .nav-links.active {
+        display: flex;
+        animation: slide-down-menu 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    
+    /* Ensure the single 'Back to Playbook' link on case study pages is not hidden */
+    .nav-links:has(a:only-child) {
+        display: flex !important;
+        position: static;
+        width: auto;
+        background: transparent;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        border-bottom: none;
+        padding: 0;
+        flex-direction: row;
+        gap: 0;
+        z-index: auto;
+    }
+    .nav-links:has(a:only-child) a {
+        font-size: 0.85rem;
+    }
+
     .form-row {
         grid-template-columns: 1fr;
     }
@@ -1853,6 +1933,29 @@ body.light-mode .skill-tile:hover {
     }
     .contact-form-container {
         padding: 24px;
+    }
+    .projects-horizontal-row {
+        grid-template-columns: 1fr; /* 1 column on mobile */
+        gap: 20px;
+    }
+    .project-flip-card {
+        height: 380px; /* shorter card on mobile */
+    }
+    /* Reduce skills marquee fade edges so details are not blacked out on small viewports */
+    .skills-marquee-section::before,
+    .skills-marquee-section::after {
+        width: 60px;
+    }
+}
+
+@keyframes slide-down-menu {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
