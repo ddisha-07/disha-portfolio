@@ -229,7 +229,7 @@ section {
   height: 100%;
   object-fit: cover;
   pointer-events: none;
-  object-position: 58% 22%;
+  object-position: 58% 32%;
   mix-blend-mode: multiply;
   filter: contrast(1.18) brightness(0.88) saturate(0.85);
 }
