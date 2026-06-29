@@ -5,490 +5,203 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Disha | Portfolio</title>
-    <!-- Custom circular JPEG favicon -->
+    <!-- Custom circular favicon -->
     <link rel="icon" href="./logo.jpg" type="image/jpeg">
-    <!-- Google Fonts: Syne for massive display headings, Space Grotesk for interactive interface elements, Plus Jakarta Sans for body text -->
+    <!-- Google Fonts: Archivo Black for display headings, Caveat for logo, DM Sans for body text -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@700;800&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Caveat:wght@700&family=DM+Sans:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <!-- FontAwesome for refined vector icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Link to custom styles -->
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="dark-mode">
-    <!-- Custom Additive Light Cursor (Orange/Cyan Ring + Dot) -->
-    <div class="custom-cursor" id="custom-cursor"></div>
-    <div class="custom-cursor-dot" id="custom-cursor-dot"></div>
-
-    <!-- Tactile Grain Overlay -->
-    <div class="grain-overlay"></div>
-
-    <!-- Interactive Ambient Sunset Orange/Cyan Background Glows -->
-    <div class="bg-glow-container">
-        <div class="glow-blob blob-1"></div>
-        <div class="glow-blob blob-2"></div>
-        <div class="glow-blob blob-3"></div>
-        <div class="interactive-glow" id="cursor-glow"></div>
-    </div>
-
-    <!-- Glassmorphic Header Menu -->
-    <header class="navbar">
+<body>
+    <!-- Persistent Header Bar -->
+    <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <a href="#" class="logo" aria-label="Disha Home Logo">
-                <div class="logo-img-frame">
-                    <img src="./logo.jpg" alt="Disha Logo">
-                </div>
-                <span>D DISHA SHREE</span>
-                <!-- Zoomed-in preview popup on hover/touch -->
-                <div class="logo-zoom-preview">
-                    <img src="./logo.jpg" alt="Disha Logo Zoomed">
-                    <div class="zoom-preview-glow"></div>
-                </div>
-            </a>
-            <nav class="nav-links">
-                <!-- Magnetic push menu links -->
-                <a href="#about" class="nav-magnetic-item">About Me</a>
-                <a href="#projects" class="nav-magnetic-item">Projects</a>
-                <a href="#find-me" class="nav-magnetic-item">Socials</a>
-            </nav>
+            <button class="logo-btn" id="logo-top">disha.</button>
+            
+            <!-- Hidden/Toggle Nav Links -->
+            <div class="nav-menu-wrapper" id="nav-menu-wrapper">
+                <a href="#about" class="nav-link">About Me</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#socials" class="nav-link">Socials</a>
+            </div>
+
             <div class="nav-actions">
-                <button id="theme-toggle" aria-label="Toggle theme" class="theme-btn">
-                    <i class="fas fa-moon"></i>
+                <!-- Theme Toggle Button -->
+                <button id="theme-toggle" aria-label="Toggle theme" class="theme-toggle-btn">
+                    <i class="fas fa-moon" id="theme-icon"></i>
                 </button>
-                <a href="./Profile.pdf" target="_blank" class="cta-btn-sm">Resume</a>
-                <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Open mobile menu">
-                    <i class="fas fa-bars"></i>
+                <!-- Menu Toggle Hamburger Button -->
+                <button id="menu-toggle" aria-label="Toggle menu" class="menu-toggle-btn">
+                    <i class="fas fa-bars" id="menu-icon"></i>
                 </button>
             </div>
         </div>
-    </header>
+    </nav>
 
-    <!-- Glowing Horizontal Scroll Progress Bar -->
-    <div class="scroll-progress-bar" id="scroll-progress"></div>
-
-    <!-- Main Content Flow -->
+    <!-- Main Viewport -->
     <main>
-        <!-- 1. Hero Split Section (100vh) -->
-        <section id="hero" class="hero-canvas-section">
-            <!-- Fullscreen Topographic Bending Canvas -->
-            <canvas id="hero-canvas" class="hero-bg-canvas"></canvas>
+        <!-- Hero Section -->
+        <section id="home" class="hero-wrapper">
+            <div class="hero-card">
+                <!-- Profile Image with multiplier filters -->
+                <img src="./profile.jpg" alt="Disha Profile Photo" class="hero-profile-img">
+                
+                <!-- Redundancy mask filters to preserve text readability -->
+                <div class="hero-gradient-overlay-left"></div>
+                <div class="hero-gradient-overlay-top"></div>
+                <div class="hero-gradient-overlay-bottom"></div>
 
-            <div class="hero-canvas-content">
-                <!-- Two-Column Split Grid -->
-                <div class="hero-split-grid">
-                    <!-- Left Column (Visual Image Space) -->
-                    <div class="hero-left-col">
-                        <!-- Stylized Snapshot Image Card with 3D Tilt -->
-                        <div class="hero-snapshot-container" data-tilt>
-                            <div class="snapshot-card-glow"></div>
-                            <div class="snapshot-inner">
-                                <div class="snapshot-image"></div>
-                                <div class="snapshot-overlay"></div>
-                            </div>
-                        </div>
+                <div class="h-8"></div>
+                
+                <!-- Main Header Title -->
+                <div class="hero-content">
+                    <p class="hero-subtitle">Hey, I'm a</p>
+                    <h1 class="hero-title">CS Student.<br>Design Nerd.</h1>
+                    <div class="hero-btn-container">
+                        <button class="hero-explore-btn" id="hero-cta-btn">Explore Playbook</button>
+                        <button class="hero-circle-arrow-btn" id="hero-arrow-btn" aria-label="Explore Playbook Arrow">
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
                     </div>
-
-                    <!-- Right Column (Text Just Beside Image) -->
-                    <div class="hero-right-col reveal-on-scroll">
-                        <h1 class="hero-welcome-title animate-title">Welcome to my Portfolio</h1>
-
-                        <h2 class="hero-intro-name animate-fade-in-delay">Hi, I’m <span class="accent-text">D Disha
-                                Shree</span> — but you can call me <span class="accent-text">Disha</span>.</h2>
-
-                        <!-- Monospaced intro line -->
-                        <div class="hero-intro-line">
-                            <p class="hero-subtitle">
-                                <strong class="highlight-word">Training models</strong> by day. <strong
-                                    class="highlight-word">Pushing pixels</strong> by night. I'm a <strong
-                                    class="highlight-word">computer science student</strong> passionate about bringing a
-                                <strong class="highlight-word">creative edge</strong> to <strong
-                                    class="highlight-word">complex technologies</strong>.
-                            </p>
-
-                            <div class="hero-buttons">
-                                <a href="#projects" class="primary-btn magnetic-btn">
-                                    <span>Explore Playbook</span>
-                                    <i class="fas fa-arrow-right"></i>
-                                </a>
-                                <a href="#find-me" class="secondary-btn magnetic-btn">
-                                    <span>Connect</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
+
+                <!-- Hover/Visual Side Lockup -->
+                <div class="hero-side-lockup">
+                    <p class="hero-side-title">Great code should feel invisible.</p>
+                    <p class="hero-side-desc">Passionate about building software that behaves as beautifully as it looks.</p>
+                </div>
+            </div>
         </section>
 
-        <!-- 2. Sticky Introduction/Bio Layout (About Me -> Who Am I?) -->
-        <section id="about" class="bio-section">
-            <div class="bio-grid-container">
-                <!-- Left Sticky Title Column (No timeline dots/lines) -->
-                <div class="bio-sticky-col">
-                    <div class="sticky-inner-content">
-                        <span class="section-tag">ABOUT ME</span>
-                        <h2 class="sticky-main-title">WHO AM I?</h2>
-                        <div class="section-divider-left"></div>
-                        <p class="bio-intro-text">
-                            I'm a <strong class="highlight-word">third-year B.Tech CSE student</strong> passionate about
-                            <strong class="highlight-word">AI & ML</strong>, <strong class="highlight-word">coding,
-                                design, and innovation</strong>. With a background in <strong
-                                class="highlight-word">art, leadership experience</strong>, and a love for <strong
-                                class="highlight-word">music</strong>, I enjoy creating experiences where <strong
-                                class="highlight-word">technology meets creativity</strong>.
+        <!-- About Me Section -->
+        <section id="about" class="about-section">
+            <div class="max-w-6xl">
+                <div class="about-grid">
+                    <!-- Left Side Statistics Block -->
+                    <div class="about-left-col">
+                        <p class="about-sublabel">Behind the Builds</p>
+                        <h2 class="about-heading">Shaping Interfaces That Make Life Simpler</h2>
+                        
+                        <div class="about-stats">
+                            <div class="stat-item">
+                                <span class="stat-value">12+</span>
+                                <span class="stat-label">Projects</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">847</span>
+                                <span class="stat-label">Commits</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">☕</span>
+                                <span class="stat-label">Coffees</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Side Bio Block -->
+                    <div class="about-right-col">
+                        <!-- Greetings Verbatim Intro -->
+                        <p class="about-paragraph" style="font-weight: 700; color: var(--text-color);">
+                            Hi, I’m D Disha Shree — but you can call me Disha.
                         </p>
-                    </div>
-                </div>
-
-                <!-- Right Scrolling Reveal Text Column (Student, Creator, Artist, Leader, Human) -->
-                <div class="bio-scroll-col">
-                    <!-- Student Block -->
-                    <div class="bio-reveal-block reveal-on-scroll active">
-                        <span class="block-number">01 / STUDENT</span>
-                        <h3>Building the Future with Code</h3>
-                    </div>
-
-                    <!-- Creator Block -->
-                    <div class="bio-reveal-block reveal-on-scroll">
-                        <span class="block-number">02 / CREATOR</span>
-                        <h3>Where Design Meets Technology</h3>
-                    </div>
-
-                    <!-- Artist Block -->
-                    <div class="bio-reveal-block reveal-on-scroll">
-                        <span class="block-number">03 / ARTIST</span>
-                        <h3>Colors, Creativity & Recognition</h3>
-                    </div>
-
-                    <!-- Leader Block -->
-                    <div class="bio-reveal-block reveal-on-scroll">
-                        <span class="block-number">04 / LEADER</span>
-                        <h3>Creating Impact Beyond the Classroom</h3>
-                    </div>
-
-                    <!-- Human Block -->
-                    <div class="bio-reveal-block reveal-on-scroll">
-                        <span class="block-number">05 / HUMAN</span>
-                        <h3>Powered by Music and Curiosity</h3>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 2.5 Skills Infinite Marquee Section (Between About Me and Projects) -->
-        <section id="skills-marquee" class="skills-marquee-section">
-            <div class="marquee-wrapper">
-                <!-- Left Row Track -->
-                <div class="marquee-row marquee-left">
-                    <div class="marquee-track">
-                        <!-- Skill Tiles List -->
-                        <div class="skill-tile"><i class="fas fa-brain"></i><span>AI & ML</span></div>
-                        <div class="skill-tile"><i class="fas fa-code"></i><span>Programming</span></div>
-                        <div class="skill-tile"><i class="fas fa-lightbulb"></i><span>Problem Solving</span></div>
-                        <div class="skill-tile"><i class="fas fa-bezier-curve"></i><span>UI/UX Design</span></div>
-                        <div class="skill-tile"><i class="fas fa-palette"></i><span>Graphic Design</span></div>
-                        <div class="skill-tile"><i class="fas fa-photo-film"></i><span>Digital Content Creation</span>
-                        </div>
-                        <div class="skill-tile"><i class="fas fa-share-nodes"></i><span>Social Media Management</span>
-                        </div>
-                        <div class="skill-tile"><i class="fas fa-crown"></i><span>Leadership</span></div>
-                        <div class="skill-tile"><i class="fas fa-comments"></i><span>Communication</span></div>
-                        <div class="skill-tile"><i class="fas fa-wand-magic-sparkles"></i><span>Creative Thinking</span>
-                        </div>
-                        <div class="skill-tile"><i class="fas fa-drafting-compass"></i><span>Design Thinking</span>
-                        </div>
-                        <div class="skill-tile"><i class="fas fa-users"></i><span>Team Collaboration</span></div>
-                        <div class="skill-tile"><i class="fas fa-shuffle"></i><span>Adaptability</span></div>
-                        <div class="skill-tile"><i class="fas fa-clock"></i><span>Time Management</span></div>
-
-                        <!-- Duplicate List for Infinite Seamless Loop -->
-                        <div class="skill-tile"><i class="fas fa-brain"></i><span>AI & ML</span></div>
-                        <div class="skill-tile"><i class="fas fa-code"></i><span>Programming</span></div>
-                        <div class="skill-tile"><i class="fas fa-lightbulb"></i><span>Problem Solving</span></div>
-                        <div class="skill-tile"><i class="fas fa-bezier-curve"></i><span>UI/UX Design</span></div>
-                        <div class="skill-tile"><i class="fas fa-palette"></i><span>Graphic Design</span></div>
-                        <div class="skill-tile"><i class="fas fa-photo-film"></i><span>Digital Content Creation</span>
-                        </div>
-                        <div class="skill-tile"><i class="fas fa-share-nodes"></i><span>Social Media Management</span>
-                        </div>
-                        <div class="skill-tile"><i class="fas fa-crown"></i><span>Leadership</span></div>
-                        <div class="skill-tile"><i class="fas fa-comments"></i><span>Communication</span></div>
-                        <div class="skill-tile"><i class="fas fa-wand-magic-sparkles"></i><span>Creative Thinking</span>
-                        </div>
-                        <div class="skill-tile"><i class="fas fa-drafting-compass"></i><span>Design Thinking</span>
-                        </div>
-                        <div class="skill-tile"><i class="fas fa-users"></i><span>Team Collaboration</span></div>
-                        <div class="skill-tile"><i class="fas fa-shuffle"></i><span>Adaptability</span></div>
-                        <div class="skill-tile"><i class="fas fa-clock"></i><span>Time Management</span></div>
-                    </div>
-                </div>
-
-                <!-- Right Row Track (Reverse Order, Moving Right) -->
-                <div class="marquee-row marquee-right">
-                    <div class="marquee-track">
-                        <!-- Skill Tiles List Reversed -->
-                        <div class="skill-tile"><i class="fas fa-clock"></i><span>Time Management</span></div>
-                        <div class="skill-tile"><i class="fas fa-shuffle"></i><span>Adaptability</span></div>
-                        <div class="skill-tile"><i class="fas fa-users"></i><span>Team Collaboration</span></div>
-                        <div class="skill-tile"><i class="fas fa-drafting-compass"></i><span>Design Thinking</span>
-                        </div>
-                        <div class="skill-tile"><i class="fas fa-wand-magic-sparkles"></i><span>Creative Thinking</span>
-                        </div>
-                        <div class="skill-tile"><i class="fas fa-comments"></i><span>Communication</span></div>
-                        <div class="skill-tile"><i class="fas fa-crown"></i><span>Leadership</span></div>
-                        <div class="skill-tile"><i class="fas fa-share-nodes"></i><span>Social Media Management</span>
-                        </div>
-                        <div class="skill-tile"><i class="fas fa-photo-film"></i><span>Digital Content Creation</span>
-                        </div>
-                        <div class="skill-tile"><i class="fas fa-palette"></i><span>Graphic Design</span></div>
-                        <div class="skill-tile"><i class="fas fa-bezier-curve"></i><span>UI/UX Design</span></div>
-                        <div class="skill-tile"><i class="fas fa-lightbulb"></i><span>Problem Solving</span></div>
-                        <div class="skill-tile"><i class="fas fa-code"></i><span>Programming</span></div>
-                        <div class="skill-tile"><i class="fas fa-brain"></i><span>AI & ML</span></div>
-
-                        <!-- Duplicate List Reversed for Infinite Seamless Loop -->
-                        <div class="skill-tile"><i class="fas fa-clock"></i><span>Time Management</span></div>
-                        <div class="skill-tile"><i class="fas fa-shuffle"></i><span>Adaptability</span></div>
-                        <div class="skill-tile"><i class="fas fa-users"></i><span>Team Collaboration</span></div>
-                        <div class="skill-tile"><i class="fas fa-drafting-compass"></i><span>Design Thinking</span>
-                        </div>
-                        <div class="skill-tile"><i class="fas fa-wand-magic-sparkles"></i><span>Creative Thinking</span>
-                        </div>
-                        <div class="skill-tile"><i class="fas fa-comments"></i><span>Communication</span></div>
-                        <div class="skill-tile"><i class="fas fa-crown"></i><span>Leadership</span></div>
-                        <div class="skill-tile"><i class="fas fa-share-nodes"></i><span>Social Media Management</span>
-                        </div>
-                        <div class="skill-tile"><i class="fas fa-photo-film"></i><span>Digital Content Creation</span>
-                        </div>
-                        <div class="skill-tile"><i class="fas fa-palette"></i><span>Graphic Design</span></div>
-                        <div class="skill-tile"><i class="fas fa-bezier-curve"></i><span>UI/UX Design</span></div>
-                        <div class="skill-tile"><i class="fas fa-lightbulb"></i><span>Problem Solving</span></div>
-                        <div class="skill-tile"><i class="fas fa-code"></i><span>Programming</span></div>
-                        <div class="skill-tile"><i class="fas fa-brain"></i><span>AI & ML</span></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 3. Projects Section: Horizontal 3D-Flipping Card Row -->
-        <section id="projects" class="portfolio-bento-section">
-            <div class="section-container">
-                <div class="section-header reveal-on-scroll">
-                    <span class="section-tag">PROJECTS</span>
-                    <h2 class="section-title">CREATIVE PLAYBOOK</h2>
-                    <div class="section-divider"></div>
-                </div>
-
-                <!-- Horizontal row of 3D flip tiles -->
-                <div class="projects-horizontal-row">
-                    <!-- Project 1: E-Commerce -->
-                    <div class="project-flip-card reveal-on-scroll" tabindex="0">
-                        <div class="project-card-inner">
-                            <!-- Front face -->
-                            <div class="card-front">
-                                <div class="bento-card-glow"></div>
-                                <div class="bento-image-wrapper">
-                                    <img src="./spendly-logo.png" alt="Spendly Logo" class="project-card-image">
-                                    <div class="golden-hour-shimmer"></div>
-                                    <span class="bento-badge">FinTech</span>
-                                </div>
-                                <div class="bento-details">
-                                    <span class="bento-card-tag">WEB APPLICATION</span>
-                                    <h3>Spendly</h3>
-                                </div>
-                            </div>
-                            <!-- Back face (revealed on hover/touch) -->
-                            <div class="card-back">
-                                <div class="bento-card-glow"></div>
-                                <div class="card-back-content">
-                                    <div>
-                                        <h3>Spendly</h3>
-                                        <span class="bento-card-tag">WEB APPLICATION</span>
-                                        <p class="project-desc">
-                                            A smart expense tracking platform for college students and freshers that
-                                            helps manage expenses, track savings, analyze spending habits, and stay
-                                            updated with recurring payment reminders.
-
-                                        </p>
-                                    </div>
-                                    <a href="ecommerce.html" class="project-link-btn primary-btn magnetic-btn">
-                                        <span>View Case Study</span>
-                                        <i class="fas fa-arrow-right"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Project 2: UI/UX Design -->
-                    <div class="project-flip-card reveal-on-scroll" tabindex="0">
-                        <div class="project-card-inner">
-                            <!-- Front face -->
-                            <div class="card-front">
-                                <div class="bento-card-glow"></div>
-                                <div class="bento-image-wrapper">
-                                    <img src="./dewyglow-logo.png" alt="DewyGlow Logo" class="project-card-image">
-                                    <div class="golden-hour-shimmer"></div>
-                                    <span class="bento-badge">UI/UX Design</span>
-                                </div>
-                                <div class="bento-details">
-                                    <span class="bento-card-tag">DESIGN CONCEPT</span>
-                                    <h3>DewyGlow</h3>
-                                </div>
-                            </div>
-                            <!-- Back face -->
-                            <div class="card-back">
-                                <div class="bento-card-glow"></div>
-                                <div class="card-back-content">
-                                    <div>
-                                        <h3>DewyGlow</h3>
-                                        <span class="bento-card-tag">DESIGN CONCEPT</span>
-                                        <p class="project-desc">
-                                            A modern concept skincare brand focused on creating a minimal, youthful, and
-                                            visually engaging brand and UI/UX experience for Gen Z consumers.
-                                        </p>
-                                    </div>
-                                    <a href="music.html" class="project-link-btn primary-btn magnetic-btn">
-                                        <span>View Design Spec</span>
-                                        <i class="fas fa-arrow-right"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Project 3: Vector Math Visualizer -->
-                    <div class="project-flip-card reveal-on-scroll" tabindex="0">
-                        <div class="project-card-inner">
-                            <!-- Front face -->
-                            <div class="card-front">
-                                <div class="bento-card-glow"></div>
-                                <div class="bento-image-wrapper">
-                                    <div class="bento-placeholder-img img-physics">
-                                        <i class="fas fa-atom"></i>
-                                    </div>
-                                    <div class="golden-hour-shimmer"></div>
-                                    <span class="bento-badge">ML Project</span>
-                                </div>
-                                <div class="bento-details">
-                                    <span class="bento-card-tag">DATA SCIENCE & AI</span>
-                                    <h3>Mental Health Predictor</h3>
-                                </div>
-                            </div>
-                            <!-- Back face -->
-                            <div class="card-back">
-                                <div class="bento-card-glow"></div>
-                                <div class="card-back-content">
-                                    <div>
-                                        <h3>Mental Health Predictor</h3>
-                                        <span class="bento-card-tag">DATA SCIENCE & AI</span>
-                                        <p class="project-desc">
-                                            A research-driven mental health case study using machine learning and Kaggle
-                                            datasets to analyze mental health patterns and generate predictive insights.
-                                        </p>
-                                    </div>
-                                    <a href="physics.html" class="project-link-btn primary-btn magnetic-btn">
-                                        <span>View Case Study</span>
-                                        <i class="fas fa-arrow-right"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 4. Minimalist Footer & Social Contacts (Socials) -->
-        <section id="find-me" class="contact-section">
-            <!-- Custom Canvas for button explosion bursts -->
-            <canvas id="burst-canvas" class="burst-canvas"></canvas>
-
-            <div class="section-container">
-                <div class="contact-grid">
-                    <!-- Contact Content Left (Socials -> Find Me!) -->
-                    <div class="contact-info reveal-on-scroll">
-                        <span class="section-tag">SOCIALS</span>
-                        <h2 class="section-title">Find Me!</h2>
-                        <div class="section-divider-left"></div>
-                        <p class="contact-description">
-                            Any message for me? Feel free to send a text directly via email, or explore my
-                            computational work and designs across these dynamic social channels.
+                        <!-- Main Biography Verbatim Info -->
+                        <p class="about-paragraph">
+                            I'm a third-year B.Tech CSE student passionate about AI & ML, coding, design, and innovation. With a background in art, leadership experience, and a love for music, I enjoy creating experiences where technology meets <em>creativity</em>.
+                        </p>
+                        <p class="about-paragraph">
+                            Currently seeking internship opportunities where engineering meets design-driven thinking. When I'm not debugging at 2 AM, I'm sketching UI concepts or building something that scratches my own itch.
                         </p>
 
-                        <div class="info-list">
-                            <div class="info-item magnetic-item">
-                                <div class="info-icon"><i class="fas fa-envelope"></i></div>
-                                <div class="info-text">
-                                    <span class="info-label">Email Me</span>
-                                    <a href="mailto:disha@example.com" class="info-value">ddishashree2006@gmail.com</a>
-                                </div>
+                        <!-- Interests Tag List -->
+                        <div class="about-interests-wrapper">
+                            <p class="interests-label">Interests</p>
+                            <div class="interests-chips">
+                                <span class="interest-chip">UI/UX Design</span>
+                                <span class="interest-chip">Machine Learning</span>
+                                <span class="interest-chip">Open Source</span>
+                                <span class="interest-chip">Web Performance</span>
+                                <span class="interest-chip">Typography</span>
+                                <span class="interest-chip">Generative Art</span>
                             </div>
                         </div>
 
-                        <div class="social-links-vertical">
-                            <a href="https://github.com/ddisha-07" target="_blank"
-                                class="social-glass-card magnetic-btn">
-                                <i class="fab fa-github"></i>
-                                <span class="social-card-name">GitHub</span>
-                                <i class="fas fa-arrow-up-right-from-square arrow-icon"></i>
-                            </a>
-                            <a href="https://www.linkedin.com/in/d-disha-shree-78488b31b/" target="_blank"
-                                class="social-glass-card magnetic-btn">
-                                <i class="fab fa-linkedin-in"></i>
-                                <span class="social-card-name">LinkedIn</span>
-                                <i class="fas fa-arrow-up-right-from-square arrow-icon"></i>
-                            </a>
-                            <a href="https://www.instagram.com/being_d_sha/" target="_blank"
-                                class="social-glass-card magnetic-btn">
-                                <i class="fab fa-instagram"></i>
-                                <span class="social-card-name">Instagram</span>
-                                <i class="fas fa-arrow-up-right-from-square arrow-icon"></i>
+                        <!-- CTA Actions -->
+                        <div class="about-actions">
+                            <span class="about-action-tag">Let's Build Something Meaningful</span>
+                            <a href="./Profile.pdf" target="_blank" class="resume-download-btn">
+                                <i class="fas fa-file-pdf"></i>
+                                <span>Resume</span>
                             </a>
                         </div>
                     </div>
+                </div>
 
-                    <!-- Contact Form Right -->
-                    <div class="contact-form-container reveal-on-scroll">
-                        <form id="contact-form" class="contact-form">
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="name">Your Name</label>
-                                    <div class="input-wrapper">
-                                        <input type="text" id="name" name="name" required placeholder="John Doe">
-                                        <span class="input-focus-line"></span>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="email">Your Email</label>
-                                    <div class="input-wrapper">
-                                        <input type="email" id="email" name="email" required
-                                            placeholder="john@example.com">
-                                        <span class="input-focus-line"></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="message">Message</label>
-                                <div class="input-wrapper">
-                                    <textarea id="message" name="message" rows="4" required
-                                        placeholder="Tell me about your project..."></textarea>
-                                    <span class="input-focus-line"></span>
-                                </div>
-                            </div>
-
-                            <div class="btn-wrap">
-                                <button type="submit" class="submit-btn magnetic-btn" id="submit-btn">
-                                    <span class="btn-text">Send Message</span>
-                                    <i class="fas fa-paper-plane"></i>
-                                </button>
-                            </div>
-                        </form>
+                <!-- Opposing Scrolling Marquees for Skills List -->
+                <div class="marquees-container">
+                    <!-- Forward Scrolling Marquee (Technical Skills) -->
+                    <div class="marquee-row marquee-fwd">
+                        <div class="marquee-inner" id="skills-marquee-1">
+                            <!-- Injected by Javascript dynamically -->
+                        </div>
                     </div>
+                    <!-- Reverse Scrolling Marquee (Interests / Soft Skills) -->
+                    <div class="marquee-row marquee-rev">
+                        <div class="marquee-inner" id="skills-marquee-2">
+                            <!-- Injected by Javascript dynamically -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects-section">
+            <div class="max-w-7xl">
+                <!-- Section Header -->
+                <div class="projects-header">
+                    <div>
+                        <p class="projects-sublabel">Explore my playbook</p>
+                        <h2 class="projects-title">Featured Works</h2>
+                    </div>
+                    <!-- View Switcher Option -->
+                    <div class="projects-view-toggle">
+                        <button class="toggle-btn active" id="view-tiles-btn">
+                            <i class="fas fa-grip"></i>
+                            <span>Tiles</span>
+                        </button>
+                        <button class="toggle-btn" id="view-list-btn">
+                            <i class="fas fa-list"></i>
+                            <span>List</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Grid/List Cards Container Wrapper -->
+                <div class="projects-container" id="projects-container">
+                    <!-- Injected by Javascript based on active view toggles -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Social Connections Section -->
+        <section id="socials" class="socials-section">
+            <div class="max-w-5xl">
+                <div class="socials-header">
+                    <p class="socials-sublabel">let's connect</p>
+                    <div class="socials-title-row">
+                        <h2 class="socials-title">Find Me Online</h2>
+                        <p class="socials-desc">Whether you want to collab, talk design, or just say hey - always down.</p>
+                    </div>
+                </div>
+
+                <!-- Grid of social profile shortcuts -->
+                <div class="socials-grid" id="socials-grid">
+                    <!-- Injected by Javascript dynamically -->
                 </div>
             </div>
         </section>
@@ -496,18 +209,43 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="footer-container">
-            <p class="copyright">&copy; 2026 Disha. Made with lots of patience.</p>
-            <div class="footer-bottom-links">
-                <a href="#" class="magnetic-btn">Privacy Policy</a>
-                <a href="#" class="magnetic-btn">Terms of Service</a>
-            </div>
-        </div>
+        <p class="footer-logo">disha.</p>
+        <p class="footer-credit">Built with HTML • CSS • Vanilla JS • too much coffee ☕</p>
+        <button class="back-to-top-btn" id="back-to-top-btn">
+            <span>Back to top</span>
+            <i class="fas fa-arrow-up"></i>
+        </button>
     </footer>
 
-    <!-- Toast Notification Container for Form Submission -->
-    <div id="toast-container" class="toast-container"></div>
+    <!-- Glassmorphic Details Modal Overlay for Showcase Projects -->
+    <div class="modal-overlay" id="project-modal-overlay">
+        <div class="modal-card">
+            <button class="modal-close-btn" id="modal-close-btn" aria-label="Close modal">
+                <i class="fas fa-xmark fa-lg"></i>
+            </button>
+            <div class="modal-header">
+                <p class="modal-type" id="modal-project-type">Web App</p>
+                <h3 class="modal-title" id="modal-project-name">SketchFlow</h3>
+            </div>
+            <p class="modal-desc" id="modal-project-desc">
+                Project detailed description will be injected here.
+            </p>
+            <div>
+                <p class="modal-meta-title">Technologies Used</p>
+                <div class="modal-tags" id="modal-project-tags">
+                    <!-- Injected by JS -->
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a href="#" target="_blank" rel="noopener noreferrer" class="modal-visit-btn" id="modal-project-link">
+                    <span>Visit Github</span>
+                    <i class="fas fa-arrow-up-right-from-square"></i>
+                </a>
+            </div>
+        </div>
+    </div>
 
+    <!-- Main JavaScript Logic -->
     <script type="module" src="app.js"></script>
 </body>
 
