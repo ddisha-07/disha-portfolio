@@ -300,9 +300,9 @@ section {
   position: absolute;
   inset-x: 0;
   bottom: 0;
-  height: 18rem;
+  height: 50%;
   pointer-events: none;
-  background: linear-gradient(to top, rgba(var(--fade-color-rgb), 1) 0%, rgba(var(--fade-color-rgb), 0.6) 45%, rgba(var(--fade-color-rgb), 0) 100%);
+  background: linear-gradient(to top, rgba(var(--fade-color-rgb), 1) 0%, rgba(var(--fade-color-rgb), 0.75) 35%, rgba(var(--fade-color-rgb), 0) 100%);
 }
 
 .hero-content {
