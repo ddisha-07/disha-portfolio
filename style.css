@@ -1416,20 +1416,16 @@ body.light-mode .modal-card {
   background: #0077b5;
 }
 
-.btn-twitter {
-  background: #1da1f2;
-}
-
 .btn-instagram {
   background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
 }
 
-.btn-dribbble {
-  background: #ea4c89;
-}
-
 .btn-github {
   background: #24292e;
+}
+
+.btn-discord {
+  background: #5865F2;
 }
 
 /* Visual Decorations */
