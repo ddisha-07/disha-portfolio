@@ -1268,7 +1268,7 @@ body.light-mode .modal-card {
 .contact-card {
   position: relative;
   overflow: hidden;
-  max-width: 64rem;
+  max-width: 72rem; /* Matches max-w-6xl container size */
   margin: 0 auto;
   background: #0c0300; /* Always-dark background to create dramatic closing */
   border: 1px solid rgba(255, 255, 255, 0.06);
