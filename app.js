@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   ];
 
-  const techSkills = ["Python", "Node.js", "TailwindCSS", "PostgreSQL", "Next.js", "C++", "Figma", "Git", "Linux", "Vite", "Java", "HTML"];
+  const techSkills = ["Python", "Java", "HTML", "C", "Canva", "Figma", "AI"];
   const softSkills = ["UI/UX Design", "Problem Solving", "Communication", "Teamwork", "Time Management", "Creative Thinking", "Public Speaking", "Leadership", "Adaptability", "Research", "Wireframing", "Design Systems", "Agile", "Mentoring"];
 
 
