@@ -1263,3 +1263,211 @@ body.light-mode .modal-card {
   font-size: 0.8rem;
   color: var(--text-muted);
 }
+
+/* Figma Specs Contact/Get In Touch Card (Always-Dark) */
+.contact-card {
+  position: relative;
+  overflow: hidden;
+  max-width: 64rem;
+  margin: 0 auto;
+  background: #0c0300; /* Always-dark background to create dramatic closing */
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 1.75rem;
+  padding: 4rem 3.5rem;
+  z-index: 5;
+}
+
+@media (max-width: 768px) {
+  .contact-card {
+    padding: 3rem 1.5rem;
+    border-radius: 1.5rem;
+  }
+}
+
+/* Grid Layout */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 3.5rem;
+  position: relative;
+  z-index: 10;
+}
+
+@media (max-width: 768px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+/* Left Column Styling */
+.contact-left-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contact-sublabel {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 900;
+  color: var(--brand-color);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.contact-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.75rem, 5.5vw, 4.25rem);
+  color: #ffffff;
+  line-height: 1.05;
+  margin-bottom: 1.5rem;
+  font-weight: 900;
+}
+
+.contact-tagline {
+  font-family: var(--font-sans);
+  font-size: clamp(1.4rem, 2.5vw, 2.1rem);
+  font-weight: 700;
+  color: rgba(255, 230, 210, 0.25);
+  line-height: 1.2;
+}
+
+/* Right Column Styling */
+.contact-right-col {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.contact-item {
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+}
+
+.contact-icon-frame {
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  background: rgba(255, 85, 0, 0.15); /* Dark orange/brown background circle */
+  color: var(--brand-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 1.1rem;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.contact-item-title {
+  font-family: var(--font-sans);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.contact-item-value,
+.contact-item-link {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  color: rgba(255, 230, 210, 0.6);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.contact-item-link:hover {
+  color: var(--brand-color);
+}
+
+/* Social Row platform buttons */
+.contact-social-row {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+
+.contact-social-btn {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 1rem;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+.contact-social-btn:hover {
+  transform: translateY(-4px) scale(1.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+.btn-linkedin {
+  background: #0077b5;
+}
+
+.btn-twitter {
+  background: #1da1f2;
+}
+
+.btn-instagram {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+
+.btn-dribbble {
+  background: #ea4c89;
+}
+
+.btn-github {
+  background: #24292e;
+}
+
+/* Visual Decorations */
+.contact-blob-1 {
+  position: absolute;
+  top: -4rem;
+  right: -4rem;
+  width: 16rem;
+  height: 16rem;
+  border-radius: 50%;
+  background: #ff5500;
+  filter: blur(80px);
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+.contact-blob-2 {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 14rem;
+  height: 14rem;
+  border-radius: 50%;
+  background: #ff3366;
+  filter: blur(70px);
+  opacity: 0.25;
+  pointer-events: none;
+}
+
+.contact-dot-grid {
+  position: absolute;
+  left: 2rem;
+  bottom: 2rem;
+  width: 12rem;
+  height: 12rem;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.12) 1.5px, transparent 1.5px);
+  background-size: 16px 16px;
+  mask-image: linear-gradient(45deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0) 70%);
+  -webkit-mask-image: linear-gradient(45deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0) 70%);
+  pointer-events: none;
+}

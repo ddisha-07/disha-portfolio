@@ -68,14 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const techSkills = ["Python", "Node.js", "TailwindCSS", "PostgreSQL", "Next.js", "C++", "Figma", "Git", "Linux", "Vite", "Java", "HTML"];
   const softSkills = ["UI/UX Design", "Problem Solving", "Communication", "Teamwork", "Time Management", "Creative Thinking", "Public Speaking", "Leadership", "Adaptability", "Research", "Wireframing", "Design Systems", "Agile", "Mentoring"];
 
-  const socialLinks = [
-    { name: "GitHub", icon: "fab fa-github", handle: "@disha_dev", url: "https://github.com/ddisha-07", desc: "Code & open source projects" },
-    { name: "LinkedIn", icon: "fab fa-linkedin-in", handle: "Disha Shree", url: "https://linkedin.com", desc: "Professional network" },
-    { name: "Twitter", icon: "fab fa-x-twitter", handle: "@dishabuilds", url: "https://twitter.com", desc: "Thoughts, threads & takes" },
-    { name: "Dribbble", icon: "fab fa-dribbble", handle: "dishadesigns", url: "https://dribbble.com", desc: "Design shots & concepts" },
-    { name: "Instagram", icon: "fab fa-instagram", handle: "@disha.creates", url: "https://instagram.com", desc: "Design & life" },
-    { name: "Email", icon: "fas fa-envelope", handle: "disha@university.edu", url: "mailto:disha@university.edu", desc: "Direct line — always open" }
-  ];
+
 
   // 2. Navigation & Theme Toggle Setup
   const navbar = document.getElementById('navbar');
@@ -161,24 +154,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (marquee1) marquee1.innerHTML = createMarqueeContent(techSkills);
   if (marquee2) marquee2.innerHTML = createMarqueeContent(softSkills);
 
-  // 4. Inject Social Cards Grid
-  const socialsGrid = document.getElementById('socials-grid');
-  if (socialsGrid) {
-    socialsGrid.innerHTML = socialLinks.map(link => `
-      <a href="${link.url}" target="_blank" rel="noopener noreferrer" class="social-card">
-        <div class="social-icon-frame">
-          <i class="${link.icon} fa-lg"></i>
-        </div>
-        <p class="social-name">${link.name}</p>
-        <p class="social-handle">${link.handle}</p>
-        <p class="social-desc-txt">${link.desc}</p>
-        <div class="social-visit-link">
-          <span>Visit</span>
-          <i class="fas fa-arrow-right fa-xs"></i>
-        </div>
-      </a>
-    `).join('');
-  }
+
 
   // 5. Projects Rendering & View Switcher (Tiles vs. List)
   const projectsContainer = document.getElementById('projects-container');
