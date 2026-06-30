@@ -560,10 +560,24 @@ section {
   padding-top: 0.5rem;
 }
 
-.about-action-tag {
-  font-family: var(--font-cursive);
-  font-size: 1rem;
-  color: var(--text-ultra-muted);
+.connect-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.25rem;
+  border-radius: 9999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  border: 2px solid var(--brand-color);
+  background: var(--brand-color);
+  color: #ffffff;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+.connect-btn:hover {
+  background: var(--brand-hover);
+  border-color: var(--brand-hover);
+  color: #ffffff;
 }
 
 .resume-download-btn {
@@ -577,6 +591,7 @@ section {
   border: 2px solid var(--brand-color);
   color: var(--brand-color);
   transition: all 0.2s ease;
+  text-decoration: none;
 }
 .resume-download-btn:hover {
   background: var(--brand-color);
