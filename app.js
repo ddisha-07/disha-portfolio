@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
       brief: "A smart expense tracking application with monthly analytics, category breakdowns, and budget limits.",
       unsplash: "photo-1554224155-8d04cb21cd6c",
       tags: ["JavaScript", "HTML", "CSS"],
-      link: "https://github.com/ddisha-07/expense-tracker",
+      link: "https://xpenseo.vercel.app/",
       isShowcase: true
     },
     {
@@ -275,6 +275,23 @@ document.addEventListener('DOMContentLoaded', () => {
     modalDesc.textContent = proj.brief;
     modalTags.innerHTML = proj.tags.map(t => `<span class="modal-tag">${t}</span>`).join('');
     modalLink.href = proj.link;
+
+    // Dynamically update link text and icon based on destination
+    const linkText = modalLink.querySelector('span');
+    const linkIcon = modalLink.querySelector('i');
+    if (linkText) {
+      if (proj.link.includes('github.com')) {
+        linkText.textContent = 'Visit Github';
+        if (linkIcon) {
+          linkIcon.className = 'fab fa-github';
+        }
+      } else {
+        linkText.textContent = 'Visit Site';
+        if (linkIcon) {
+          linkIcon.className = 'fas fa-arrow-up-right-from-square';
+        }
+      }
+    }
 
     modalOverlay.classList.add('active');
     document.body.style.overflow = 'hidden'; // prevent screen scroll behind active modal
