@@ -14,13 +14,13 @@ document.addEventListener('DOMContentLoaded', () => {
       isShowcase: true
     },
     {
-      id: "neuralnote",
-      name: "NeuralNote",
-      type: "AI Tool",
-      brief: "Smart note-taking that auto-summarizes, tags, and links thoughts into an interconnected knowledge graph.",
-      unsplash: "photo-1677442135703-1787eea5ce01",
-      tags: ["Python", "OpenAI", "Next.js"],
-      link: "https://github.com/ddisha-07/NeuralNote",
+      id: "kai",
+      name: "Kai",
+      type: "AI ChatBot",
+      brief: "An interactive AI learning assistant designed to provide conversational guidance, coding help, and academic support.",
+      unsplash: "photo-1531747118685-ca8fa6e08806",
+      tags: ["JavaScript", "HTML", "CSS"],
+      link: "https://mentora-kai.vercel.app/",
       isShowcase: true
     },
     {
