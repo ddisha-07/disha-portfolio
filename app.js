@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
       id: "kai",
       name: "Kai",
       type: "AI ChatBot",
-      brief: "An interactive AI learning assistant designed to provide conversational guidance, coding help, and academic support.",
+      brief: "An AI-powered multilingual Learning & Development platform that captures organizational knowledge from experts and retired employees, making it accessible to workers, trainees, and engineers through Kai, an intelligent conversational assistant.",
       unsplash: "photo-1531747118685-ca8fa6e08806",
       tags: ["JavaScript", "HTML", "CSS"],
       link: "https://mentora-kai.vercel.app/",
