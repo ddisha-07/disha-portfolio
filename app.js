@@ -4,13 +4,13 @@ document.addEventListener('DOMContentLoaded', () => {
   // 1. Data Definitions (Projects, Skills, Socials)
   const projects = [
     {
-      id: "sketchflow",
-      name: "SketchFlow",
-      type: "Web App",
-      brief: "Real-time collaborative whiteboard with AI shape recognition and smart connectors for distributed teams.",
-      unsplash: "photo-1611532736597-de2d4265fba3",
-      tags: ["React", "WebSocket", "Canvas API"],
-      link: "https://github.com/ddisha-07/SketchFlow",
+      id: "xpenseo",
+      name: "Xpenseo",
+      type: "Expense Tracker",
+      brief: "A smart expense tracking application with monthly analytics, category breakdowns, and budget limits.",
+      unsplash: "photo-1554224155-8d04cb21cd6c",
+      tags: ["JavaScript", "HTML", "CSS"],
+      link: "https://github.com/ddisha-07/expense-tracker",
       isShowcase: true
     },
     {
