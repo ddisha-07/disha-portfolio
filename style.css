@@ -940,10 +940,10 @@ body.light-mode .list-tag {
 
 /* Socials Section */
 .socials-section {
-  padding: 6rem 1.25rem;
+  padding: 6rem 0.75rem;
 }
 @media (min-width: 640px) {
-  .socials-section { padding: 6rem 2.5rem; }
+  .socials-section { padding: 6rem 1.25rem; }
 }
 
 .socials-header {
@@ -1268,7 +1268,7 @@ body.light-mode .modal-card {
 .contact-card {
   position: relative;
   overflow: hidden;
-  max-width: 80rem; /* Matches max-w-7xl container size */
+  max-width: none; /* No max-width constraint to match the full-width hero card */
   margin: 0 auto;
   background: #0c0300; /* Always-dark background to create dramatic closing */
   border: 1px solid rgba(255, 255, 255, 0.06);
